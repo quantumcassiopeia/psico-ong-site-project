@@ -55,6 +55,11 @@ button {
   transition: background-color 0.4s, color 0.4s;
 }
 
+.material-symbols-outlined {
+  vertical-align: middle;
+  color: var(--white);
+}
+
 button:hover {
   border: 2px solid var(--primary-color);
   background-color: var(--white);
@@ -266,11 +271,6 @@ header {
   }
 }
 
-.material-symbols-outlined {
-  vertical-align: middle;
-  color: var(--white);
-}
-
 /*Help us Section*/
 
 #help-paragraph {
@@ -398,15 +398,16 @@ footer {
   bottom: 30px;
   right: 30px;
 
-  width: 70px;
-  height: 70px;
-
+  padding: 1rem;
   border-radius: 50%;
 
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: var(--primary-color);
 
+  opacity: 0;
+  transition: opacity 0.3s 0.1s, color 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   cursor: pointer;
 }
 

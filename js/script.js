@@ -7,6 +7,8 @@ const navLinks = document.querySelectorAll("#nav-list li a");
 
 const scrollTopButton = document.getElementById("scrollTop");
 
+let isScrolling;
+
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -32,10 +34,19 @@ function toggleScrollTopButton() {
   }
 }
 
-window.addEventListener("scroll", toggleScrollTopButton);
-
 scrollTopButton.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
   });
+});
+
+window.addEventListener("scroll", () => {
+  toggleScrollTopButton();
+
+  if (scrollTopButton.classList.contains("visible")) {
+    clearTimeout(isScrolling);
+    isScrolling = setTimeout(() => {
+      scrollTopButton.classList.remove("visible");
+    }, 2000);
+  }
 });
